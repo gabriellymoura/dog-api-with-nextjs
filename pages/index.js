@@ -1,65 +1,61 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import React from  'react';
+import Head from 'next/head';
+import { Box, Heading, Flex, Image, Button, Center, useToast } from '@chakra-ui/react';
+import { useState, useEffect } from 'react';
 
-export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+const Home = () =>{
+    const [message, setMessage] = useState('');
+    const [status, setStatus] = useState('');
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+    useEffect(() => {
+        fetch('https://dog.ceo/api/breeds/image/random')
+            .then(response => {response.json().then( data => setData(data))})
+            .catch(e=>console.log("erro: " +e.message))
+    }, [])
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+    const setData = ({
+        message,
+        status
+    }) => {
+        setMessage(message);
+        setStatus(status);
+    };
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+    const getDog = () =>{
+        fetch('https://dog.ceo/api/breeds/image/random')
+            .then(response => {response.json().then( data => setData(data))})
+            .catch(e=>console.log("erro: " +e.message))
+    }
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
+    const toast = useToast()
 
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+    return(
+        <>
+        <Head> <title>Doguinhos.com</title></Head>
+        <Box mt = {5} >
+            <Flex justify = "center">
+                <Heading as ='h1' textAlign="center" size="2xl" mb={5} colorScheme='pink'>Doguinhos.com</Heading>
+            </Flex>
+        </Box>
+        <Heading textAlign='center' mb = {5} pt='10' >
+            <Button colorScheme="red" size="lg"
+                onClick={() =>
+                    (getDog(),toast({
+                        title: "Melhor doguinho encontrado!",
+                        description: "Nós trouxemos o doguinho mais divertido para alegar seu dia",
+                        status: "success",
+                        duration: 4000,
+                        isClosable: true,}))}
+            >Me dê um doguinho</Button>
+        </Heading>
+        <Center>
+            <Image src={message} alt="Buscando o melhor doguinho" />   
+        </Center>
+        
+        
+        </>
+    )
 }
+
+export default Home;
