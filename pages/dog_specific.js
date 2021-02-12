@@ -142,7 +142,7 @@ const DogRandom = () =>{
             <Image src={message} alt="Buscando o melhor doguinho" />   
         </Center>
         </>
-    )
+    );
 }
 
 export default DogRandom;

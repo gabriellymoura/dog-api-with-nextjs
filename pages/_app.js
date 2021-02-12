@@ -6,7 +6,7 @@ function MyApp({ Component, pageProps}){
             <CSSReset/>
             <Component {...pageProps}/>
         </ChakraProvider>
-   )
+   );
 }
 
 export default MyApp;
