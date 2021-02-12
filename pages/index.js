@@ -1,6 +1,6 @@
 import React from  'react';
 import Head from 'next/head';
-import { Box, Heading, Flex, Image, Button, Center, useToast } from '@chakra-ui/react';
+import { Box, Heading, Flex, Image, Button, Center, useToast, LinkOverlay } from '@chakra-ui/react';
 import { useState, useEffect } from 'react';
 
 
@@ -33,10 +33,17 @@ const Home = () =>{
     return(
         <>
         <Head> <title>Doguinhos.com</title></Head>
+        
         <Box mt = {5} >
             <Flex justify = "center">
+                <Heading><title>Doguinhos.com</title></Heading>
                 <Heading as ='h1' textAlign="center" size="2xl" mb={5} colorScheme='pink'>Doguinhos.com</Heading>
             </Flex>
+            <Box bgImage='url("../images/bg_dog1.jpg")'>
+                <Button  left ='1020' colorScheme='red' variant="outline" size="xs" top = '-16' >
+                    <LinkOverlay href = '/dog_specific'>Quero um doguinho específico!!!!</LinkOverlay>
+                </Button>
+            </Box>
         </Box>
         <Heading textAlign='center' mb = {5} pt='10' >
             <Button colorScheme="red" size="lg"
@@ -54,6 +61,7 @@ const Home = () =>{
         </Center>
         
         
+
         </>
     )
 }
