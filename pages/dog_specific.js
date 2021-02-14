@@ -39,16 +39,19 @@ const DogRandom = () =>{
     return(
         <>
         <Head>Doguinho Random</Head>
+        <Heading bg='red.600' fontSize='1.75em' pt={3}  color='whiteAlpha.800'>
+            Doguinhos.com 
+            <Box bgImage='url("../images/bg_dog1.jpg")'>
+                <Button  left ='1020' colorScheme='whiteAlpha' size="xs" top = '-8' >
+                    <LinkOverlay href = '/'>Quero um doguinho aleatório!!!!</LinkOverlay>
+                </Button>
+            </Box>   
+        </Heading>
         <Box mt = {5} >
             <Flex justify = "center">
                 <Heading><title>Doguinhos.com</title></Heading>
                 <Heading as ='h1' textAlign="center" size="2xl" mb={5} colorScheme='pink'>Doguinhos.com</Heading>
             </Flex>
-            <Box bgImage='url("../images/bg_dog1.jpg")'>
-                <Button  left ='1020' colorScheme='red' variant="outline" size="xs" top = '-16' >
-                    <LinkOverlay href = '/'>Quero um doguinho aleatório!!!!</LinkOverlay>
-                </Button>
-            </Box>
         </Box>
         <Center>
             <Heading textAlign='center' mb = {5} pt='10' >
