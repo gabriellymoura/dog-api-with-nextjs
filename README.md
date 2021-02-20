@@ -1,34 +1,19 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## Um OLá para vocÊ
+Esse é uma simples página que consome uma api, bem simples e fiz somente por diversão e desenvolvimento próprio.
 
-First, run the development server:
+É uma pagina que mostra imagens de doguinhos no modo aleatorio ou por raça. COmo dito, bem simples mas divertido de ficar vendo.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Sobre a API
+A API usada pode ser encontrada em [https://dog.ceo/dog-api/](https://dog.ceo/dog-api/). Basta acessar e ler a documentação que é uma implementação bem fácil.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Só cuidado com as fofuras de doguinhos que você vai encontrar.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## Learn More
+## Produção
+Se quiser ver a aplicação rodando ao vivo e à cores basta visitar a plataforma [Vercel](https://vercel.com) ou ir direto no perfil da vercel [https://vercel.com/gabriellymoura](https://vercel.com/gabriellymoura) ou até mesmo acessar a pagina direto [https://dog-api-two.vercel.app/](https://dog-api-two.vercel.app/)
 
-To learn more about Next.js, take a look at the following resources:
+Aliás fica a dica pra quem quer colocar seus projetos em um domínio, visita lá pra saber mais.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
